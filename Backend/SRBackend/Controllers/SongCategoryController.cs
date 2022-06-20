@@ -1,5 +1,10 @@
 ﻿using SRBackend.Data;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using Microsoft.EntityFrameworkCore;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+
 using SRBackend.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +38,17 @@ namespace SRBackend.Controllers
                 Name = x.Name,
 
             };
+            if (x.CategoryPic != null)
+            {
+                string ekstenzija = Path.GetExtension(x.CategoryPic.FileName);
+
+                var filename = $"{Guid.NewGuid()}{ekstenzija}";
+
+                x.CategoryPic.CopyTo(new FileStream("wwwroot/" + "uploads/" + filename, FileMode.Create));
+
+                newCategory.CategoryPic = "https://localhost:44308/" + "uploads/" + filename;
+
+            }
 
             _dbContext.Add(newCategory);
             _dbContext.SaveChanges();
