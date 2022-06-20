@@ -19,6 +19,9 @@ namespace SRBackend.Data
         public DbSet<Gender> Gender { get; set; }
         public DbSet<SongCategory> SongCategory { get; set; }
         public DbSet<Song> Song { get; set; }
+        public DbSet<Favorites> Favorites { get; set; }
+        public DbSet<SongRating> SongRating { get; set; }
+
         public ApplicationDbContext(
             DbContextOptions options) : base(options)
         {}

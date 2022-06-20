@@ -10831,11 +10831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj",
+      "projectUniqueName": "C:\\Users\\gondz\\Documents\\GitHub\\SREdinTask\\Backend\\SRBackend\\SRBackend.csproj",
       "projectName": "SRBackend",
-      "projectPath": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj",
+      "projectPath": "C:\\Users\\gondz\\Documents\\GitHub\\SREdinTask\\Backend\\SRBackend\\SRBackend.csproj",
       "packagesPath": "C:\\Users\\gondz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\obj\\",
+      "outputPath": "C:\\Users\\gondz\\Documents\\GitHub\\SREdinTask\\Backend\\SRBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gondz\\AppData\\Roaming\\NuGet\\NuGet.Config",

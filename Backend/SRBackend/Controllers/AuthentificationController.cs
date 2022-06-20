@@ -30,7 +30,7 @@ namespace SRBackend.Controllers
         {
 
             UserProfile logiraniKorisnik = _dbContext.UserProfile
-                .FirstOrDefault(k => k.Username != null && k.Username == x.korisnickoIme && k.Password == x.lozinka);
+                .FirstOrDefault(k => k.Username != null && k.Username == x.username && k.Password == x.password);
 
             if(logiraniKorisnik == null)
             {

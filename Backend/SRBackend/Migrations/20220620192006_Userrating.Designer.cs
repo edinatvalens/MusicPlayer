@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SRBackend.Data;
 
 namespace SRBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220620192006_Userrating")]
+    partial class Userrating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,6 +55,8 @@ namespace SRBackend.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("SongID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("Favorites");
                 });
@@ -226,7 +230,15 @@ namespace SRBackend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SRBackend.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("song");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("SRBackend.Models.Song", b =>

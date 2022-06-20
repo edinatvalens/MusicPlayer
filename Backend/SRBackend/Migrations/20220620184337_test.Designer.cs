@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SRBackend.Data;
 
 namespace SRBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220620184337_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,6 +55,8 @@ namespace SRBackend.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("SongID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("Favorites");
                 });
@@ -120,26 +124,6 @@ namespace SRBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SongCategory");
-                });
-
-            modelBuilder.Entity("SRBackend.Models.SongRating", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Song_id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("User_id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Song_id");
-
-                    b.ToTable("SongRating");
                 });
 
             modelBuilder.Entity("SRBackend.Models.UserProfile", b =>
@@ -226,7 +210,15 @@ namespace SRBackend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SRBackend.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("song");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("SRBackend.Models.Song", b =>
@@ -238,17 +230,6 @@ namespace SRBackend.Migrations
                         .IsRequired();
 
                     b.Navigation("songcategory");
-                });
-
-            modelBuilder.Entity("SRBackend.Models.SongRating", b =>
-                {
-                    b.HasOne("SRBackend.Models.Song", "song")
-                        .WithMany()
-                        .HasForeignKey("Song_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("song");
                 });
 
             modelBuilder.Entity("SRBackend.ModelsAutentififkacija.AutentifikacijaToken", b =>

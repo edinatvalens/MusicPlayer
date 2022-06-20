@@ -39,7 +39,7 @@ namespace SRBackend.Controllers
         }
 
         [HttpPost]
-        public Song Add([FromForm] ArtikalAddVM x)
+        public Song Add([FromForm] SongAddVM x)
         {
             
             var newSong = new Song()
@@ -47,8 +47,7 @@ namespace SRBackend.Controllers
                 SongName=x.SongName,
                 ArtristName=x.ArtristName,
                 SongUrl=x.SongUrl,
-                SongRating=x.SongRating,
-                Favorite=x.Favorite,
+                SongRating=0,
                 AddedDate=x.AddedDate,
                 EditDate=x.EditDate,
                 Song_Category_id=x.SongCategoryID
