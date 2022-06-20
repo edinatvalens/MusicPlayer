@@ -2,7 +2,6 @@
 using SRBackend.Models;
 using Microsoft.AspNetCore.Mvc;
 using SRBackend.ViewModels;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,8 +24,11 @@ namespace SRBackend.Controllers
         }
 
         [HttpPost]
-        public Favorites Add([FromBody] FavoritesAddVM x)
+        public IActionResult Add([FromBody] FavoritesAddVM x)
         {
+            Favorites check = null;
+            check= _dbContext.Favorites.FirstOrDefault(a => a.SongID == x.SongID && a.UserID == x.UserID);
+            if (check != null) return Ok("Already in favorites!");
 
             var newFav = new Favorites()
             {
@@ -37,7 +39,7 @@ namespace SRBackend.Controllers
 
             _dbContext.Add(newFav);
             _dbContext.SaveChanges();
-            return newFav;
+            return Ok(newFav);
         }
 
 

@@ -1,7 +1,6 @@
 ﻿using SRBackend.Helper;
 using SRBackend.Helper.AutentifikacijaAutorizacija;
 using SRBackend.Data;
-using SRBackend.Helper.AutentifikacijaAutorizacija;
 using SRBackend.Models;
 using SRBackend.ModelsAutentififkacija;
 using Microsoft.AspNetCore.Http;

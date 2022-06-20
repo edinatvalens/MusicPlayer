@@ -1,10 +1,8 @@
 ﻿using SRBackend.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace SRBackend.Modul0_Autentifikacija.Models
 {
