@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CnlS5ZedajtogCVfpvN99V//kK/tE+BioP/Ro+hnWZSchmR+dvVLzmvCLsB081qqB9W5jw+b9bX03HBqY4C8SQ==",
+  "dgSpecHash": "+0AKITqlik5cierVLEAFAf/zDZ85K27h4OYcqhvi4AXLTER9Lw29Qz/t0XKU6bIJu780hHO7UHjEKt8F18c/mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\SRBackend.csproj",
+  "projectFilePath": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gondz\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\gondz\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

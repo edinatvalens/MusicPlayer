@@ -131,3 +131,13 @@ C:\Users\gondz\Desktop\SoftRaySolutions\SRBackend\SRBackend\obj\Debug\net5.0\SRB
 C:\Users\gondz\Desktop\SoftRaySolutions\SRBackend\SRBackend\obj\Debug\net5.0\ref\SRBackend.dll
 C:\Users\gondz\Desktop\SoftRaySolutions\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.pdb
 C:\Users\gondz\Desktop\SoftRaySolutions\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.genruntimeconfig.cache
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.csproj.AssemblyReference.cache
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.AssemblyInfoInputs.cache
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.AssemblyInfo.cs
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.csproj.CoreCompileInputs.cache
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.dll
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\ref\SRBackend.dll
+C:\Users\gondz\Documents\GitHub\SRBackend\SRBackend\obj\Debug\net5.0\SRBackend.pdb

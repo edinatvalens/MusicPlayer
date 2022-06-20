@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\SRBackend.csproj": {}
+    "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\SRBackend.csproj": {
+    "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\SRBackend.csproj",
+        "projectUniqueName": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj",
         "projectName": "SRBackend",
-        "projectPath": "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\SRBackend.csproj",
+        "projectPath": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\SRBackend.csproj",
         "packagesPath": "C:\\Users\\gondz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gondz\\Desktop\\SoftRaySolutions\\SRBackend\\SRBackend\\obj\\",
+        "outputPath": "C:\\Users\\gondz\\Documents\\GitHub\\SRBackend\\SRBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gondz\\AppData\\Roaming\\NuGet\\NuGet.Config",
