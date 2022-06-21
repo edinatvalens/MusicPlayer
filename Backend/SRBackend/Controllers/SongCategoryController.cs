@@ -30,7 +30,7 @@ namespace SRBackend.Controllers
         }
 
         [HttpPost]
-        public SongCategory Add([FromBody] SongCategoryAddVM x)
+        public SongCategory Add([FromForm] SongCategoryAddVM x)
         {
 
             var newCategory = new SongCategory()
