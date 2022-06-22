@@ -8,7 +8,6 @@ namespace SRBackend.ViewModels
         public string Lastname { get; set; }
         public string Email { get; set; }
         public DateTime Birthdate { get; set; }
-        public string Adress { get; set; }
         public int City_id { get; set; }
         public int Gender_id { get; set; }
         public string Username { get; set; }

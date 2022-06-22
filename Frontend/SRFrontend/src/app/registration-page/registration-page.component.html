@@ -1,0 +1,40 @@
+<div class="containerm">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <br>
+      <div class="half">
+        <input [(ngModel)]="txtName" type="text" placeholder="Enter name" name="psw" required>
+        <input type="text" placeholder="Enter last name" name="psw-repeat" required>
+      </div>
+      <input type="text" [(ngModel)]="txtLastname" placeholder="Enter Email" name="email" required>
+      <label for="email"><b>Enter date of birth</b></label>
+      <input type="date" [(ngModel)]="txtDate" placeholder="Enter date of birth" name="email" required>
+      <div class="half">
+        <input type="text" [(ngModel)]="txtUsername" placeholder="Enter Username" name="psw" required>
+        <input type="password" [(ngModel)]="txtPassword" placeholder="Enter Password" name="psw-repeat" required>
+      </div>
+      <div class="half">
+
+      <select class="form-control" name="code" size="1" [(ngModel)]="txtGender">
+        <option value="undefined" disabled selected>
+          Choose gender
+        </option>
+        <option *ngFor="let obj of Genders" name="txtSpol" [ngValue]="obj.id" ngDefaultControl>{{obj?.name}}</option>
+      </select>
+      <select class="form-control" name="code" size="1" [(ngModel)]="txtCity">
+        <option value="undefined" disabled selected>
+          Choose city
+        </option>
+        <option *ngFor="let obj of Cities" name="txtSpol" [ngValue]="obj.id" ngDefaultControl>{{obj?.name}}</option>
+      </select>
+      </div>
+      <p>By creating an account you agree to our
+        <a href="https://policies.google.com/privacy?hl=en-US" style="color:dodgerblue">Terms & Privacy</a>
+        .
+      </p>
+      <div class="clearfix">
+        <a class="cancelbtn" href="login" style="border: 1px solid #D50000;">Cancel</a>
+        <button class="signupbtn" (click)="Registration()" style="border: 1px solid #D50000;">Sign Up</button>
+      </div>
+    </div>
+  </div>

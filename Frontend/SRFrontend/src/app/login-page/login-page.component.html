@@ -1,0 +1,19 @@
+<div class="containerm">
+
+    <div class="container">
+      <h1>Login</h1>
+      <label for="uname"><b>Username</b></label>
+      <input [(ngModel)]="txtUsername" type="text" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input [(ngModel)]="txtPassword" type="password" placeholder="Enter Password" name="psw" required>
+  
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+  
+      <button (click)="btnLogin()">Login</button>
+      <button><a href="registration">Dont have account? Sign up!</a></button>
+  
+    </div>
+  
+  </div>

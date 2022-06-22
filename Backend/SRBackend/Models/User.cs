@@ -14,7 +14,6 @@ namespace SRBackend.Models
         public string Lastname { get; set; }
         public string Email { get; set; }
         public DateTime Birthdate { get; set; }
-        public string Adress { get; set; }
         [ForeignKey(nameof(city))]
         public int City_id { get; set; }
         public City city { get; set; }

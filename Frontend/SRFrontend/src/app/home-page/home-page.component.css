@@ -1,88 +1,179 @@
-body {
-    color: #616161;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #ECEFF1;
-    background-repeat: no-repeat;
-}
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
 
-.card-strip {
-    background-color: #fff;
-    padding: 25px;
-    width: 950px;
-    margin: 20px auto;
-    border-radius: 3px;
-    box-shadow: 0px 8px 16px 0px #E0E0E0;
-}
-
-.dark-text {
-    color: #000;
-}
-
-.extended-title {
-    color: #757575;
-    background-color: #E0E0E0;
-    padding: 1px 5px;
-}
-
-.fa-star {
-    color: #E0E0E0;
-}
-
-.fa-star.active {
-    color: #FFC400;
-}
-
-.green-block {
-    color: #00695C;
-    background-color: #B2DFDB;
-    padding: 3px 20px;
-    border-radius: 2px;
-}
-
-.comp-logo {
-    width: 70px;
-    height: 80px;
-}
-
-.v-line {
-    width: 1px;
-    background-color: #E0E0E0;
-    margin-right: 50px;
-}
-
-.blue-text {
-    color: #00B8D4;
-}
-
-.price-fall {
-    font-size: 17px;
-}
-
-.btn-orange {
-    background-color: #FF9800;
-    color: #fff;
-}
-
-@media screen and (max-width: 1012px) {
-    .card-strip {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 859px) {
-    .v-line {
-        display: none;
     }
 
-    .price { 
-        width: 100%;
-        margin-left: 95px;
+    .row.content {
+        height: 90%;
     }
-}
 
-@media screen and (max-width: 529px) {
-    .price {
-        margin-left: 0px;
+    /* Set gray background color and 100% height */
+    .sidenav {
+        background-color: #d50000;
+        position: absolute;
+        height: 87%;
+        max-height: 87%;
+        width: 25%;
     }
-}
+
+    a {
+        font-size: large;
+        color: white;
+    }
+
+    h3 {
+        color: white;
+        padding-bottom: 5px;
+        border-bottom: 2px solid white;
+    }
+
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+
+
+
+    .cont {
+        width: 75%;
+        margin-left: 25%;
+        position: absolute;
+    }
+
+
+
+
+    .card-header {
+        margin-top: 1px;
+        display: flex;
+        height: 3.5rem;
+        background-color: #fff;
+    }
+
+    .widget-subheading {
+        color: #858a8e;
+        font-size: 10px;
+    }
+
+    .card-header.card-header-tab .card-header-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .card-header .header-icon {
+        font-size: 1.65rem;
+        margin-right: 0.625rem;
+    }
+
+    .card-header.card-header-tab .card-header-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+
+
+
+    .scroll-area-sm {
+        height: 300px;
+        border: 1px solid #d50000;
+        border-radius: 5px;
+        overflow-x: hidden;
+    }
+
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: 0.75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+    }
+
+    .list-group {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+
+
+
+    .widget-content {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .widget-content .widget-content-wrapper {
+        display: flex;
+        flex: 1;
+        position: relative;
+        align-items: center;
+    }
+
+
+
+    .widget-content .widget-content-right {
+        margin-left: auto;
+    }
+
+
+
+    .btn {
+        position: relative;
+        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-outline-success {
+        color: #d50000;
+        border-color: #d50000;
+    }
+
+    .btn-outline-success:hover {
+        color: #d50000;
+        opacity: 0.5;
+    }
+
+
+    .btn-primary {
+        color: #fff;
+        background-color: #3f6ad8;
+        border-color: #3f6ad8;
+    }
+
+    .btn {
+        position: relative;
+        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+        outline: none !important;
+    }
+
+    .card-footer {
+        background-color: #fff;
+    }
+
+    @media screen and (max-width: 767px) {
+
+
+        .row.content {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #d50000;
+            width: 100%;
+            position: relative;
+        }
+
+        .cont {
+            width: 100%;
+            margin: 0;
+            position: relative;
+        }
+
+    }

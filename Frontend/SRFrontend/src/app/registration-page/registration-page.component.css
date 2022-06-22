@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+input[type=text],
+input[type=password],
+input[type=date],
+select,
+option {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 5px 22px 0;
+    display: inline-block;
+    border: none;
+    color: black;
+    background: #f1f1f1;
+}
+
+label {
+    color: grey;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+button {
+    background-color: white;
+    color: #D50000;
+    padding: 15.5px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+a {
+    padding: 14px 20px;
+    margin: 8px 0;
+    text-decoration: none;
+    color: #D50000;
+    opacity: 0.9;
+
+}
+
+a:hover {
+    opacity: 1;
+    cursor: pointer;
+
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: white;
+
+}
+
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+.containerm {
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px #333;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #D50000;
+    ;
+
+}
+
+.half {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 600px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+
+    .containerm {
+        width: 80%;
+    }
+}

@@ -44,7 +44,6 @@ namespace SRBackend.Controllers
                     Lastname = x.Lastname,
                     Email = x.Email,
                     Birthdate = x.Birthdate,
-                    Adress = x.Adress,
                     City_id = x.City_id,
                     Gender_id = x.Gender_id,
                     Username = x.Username,
