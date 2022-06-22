@@ -1,179 +1,58 @@
-    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    html,
-    body {
-        height: 100%;
-        margin: 0;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: arial;
+}
+.all{
+    margin:0;
 
-    }
+    display: flex;
+    flex-direction: column;
+}
+.content{
 
-    .row.content {
-        height: 90%;
-    }
+    margin-left: 250px;
+    background-image:linear-gradient(#1624e852,#d000ff54);
 
-    /* Set gray background color and 100% height */
-    .sidenav {
-        background-color: #d50000;
-        position: absolute;
-        height: 87%;
-        max-height: 87%;
-        width: 25%;
-    }
+}
 
-    a {
-        font-size: large;
-        color: white;
-    }
-
-    h3 {
-        color: white;
-        padding-bottom: 5px;
-        border-bottom: 2px solid white;
-    }
-
-
-    /* On small screens, set height to 'auto' for sidenav and grid */
-
-
-
-    .cont {
-        width: 75%;
-        margin-left: 25%;
-        position: absolute;
-    }
-
-
-
-
-    .card-header {
-        margin-top: 1px;
-        display: flex;
-        height: 3.5rem;
-        background-color: #fff;
-    }
-
-    .widget-subheading {
-        color: #858a8e;
-        font-size: 10px;
-    }
-
-    .card-header.card-header-tab .card-header-title {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-    .card-header .header-icon {
-        font-size: 1.65rem;
-        margin-right: 0.625rem;
-    }
-
-    .card-header.card-header-tab .card-header-title {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-
-
-
-    .scroll-area-sm {
-        height: 300px;
-        border: 1px solid #d50000;
-        border-radius: 5px;
-        overflow-x: hidden;
-    }
-
-    .list-group-item {
-        position: relative;
-        display: block;
-        padding: 0.75rem 1.25rem;
-        margin-bottom: -1px;
-        background-color: #fff;
-    }
-
-    .list-group {
-        display: flex;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-    }
-
-
-
-
-    .widget-content {
-        padding: 1rem;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .widget-content .widget-content-wrapper {
-        display: flex;
-        flex: 1;
-        position: relative;
-        align-items: center;
-    }
-
-
-
-    .widget-content .widget-content-right {
-        margin-left: auto;
-    }
-
-
-
-    .btn {
-        position: relative;
-        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
-    }
-
-    .btn-outline-success {
-        color: #d50000;
-        border-color: #d50000;
-    }
-
-    .btn-outline-success:hover {
-        color: #d50000;
-        opacity: 0.5;
-    }
-
-
-    .btn-primary {
-        color: #fff;
-        background-color: #3f6ad8;
-        border-color: #3f6ad8;
-    }
-
-    .btn {
-        position: relative;
-        transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
-        outline: none !important;
-    }
-
-    .card-footer {
-        background-color: #fff;
-    }
-
-    @media screen and (max-width: 767px) {
-
-
-        .row.content {
-            display: flex;
-            flex-direction: column;
-            height: auto;
-        }
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            background-color: #d50000;
-            width: 100%;
-            position: relative;
-        }
-
-        .cont {
-            width: 100%;
-            margin: 0;
-            position: relative;
-        }
-
-    }
+.wrapper{
+	position:relative;
+}
+.sidebar{
+	position: fixed;
+	width: 25%;
+	height: 100%;
+    background-color: #0093E9;
+    background-image:linear-gradient(#1624e8,#d000ff);
+	    
+}
+.wrapper .sidebar ul li{
+	padding: 15px;	
+}
+.wrapper .sidebar ul li a{
+	color: white;
+	display: block;
+}
+.wrapper .sidebar ul li a .fas{
+	width: 25px!important;
+}
+.wrapper .sidebar ul li a .far{
+	width: 25px!important;
+}
+.wrapper .sidebar ul li:hover{
+	background: #311B92;
+}
+.wrapper .sidebar ul li a:hover{
+	color: white;
+	text-decoration: none;
+}
+.myproject{
+	margin-top: 25px;
+	color: white;
+	font-size: 14px;
+	margin-bottom: 0;
+}

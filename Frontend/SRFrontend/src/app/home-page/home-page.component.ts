@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
     Songs:any;
-    Categorys:any;
+    Categories:any;
   constructor(private httpKlijent: HttpClient,private  router :Router) { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
     this.httpKlijent.get("https://localhost:44308/SongCategory/GetAll")
     .subscribe(x=>{
       console.log("Categorys", x);
-      this.Categorys = x;
+      this.Categories = x;
     });
 
   }

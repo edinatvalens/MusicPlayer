@@ -1,69 +1,14 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="all">
+<div class="wrapper">
+    <div class="sidebar">
+        
+    <p class="myproject px-3">CATEGORIES</p>
+    <ul>
+        <li *ngFor="let c of Categories"><a href="#">{{c.name}}</a></li>
 
-<body>
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-3 sidenav">
-                <h3>Categories</h3>
-                <ul class="nav nav-pills nav-stacked">
-                    <li *ngFor="let c of Categorys"><a href="#section1">{{c.name}}</a></li>
-
-                </ul><br>
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#section1">Your favorite list</a></li>
-                </ul><br>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Blog..">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col-sm-9 cont">
-
-
-                <h4 style="margin-left:30px">Song List</h4>
-
-                <div class="scroll-area-sm">
-                    <perfect-scrollbar>
-                        <div style="position: static;">
-                            <div class="ps-content">
-                                <ul class="list-group">
-
-
-                                    <li *ngFor="let s of Songs" class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-
-                                                <div>
-                                                    <div class="widget-heading">Client Meeting at 11 AM</div>
-                                                    <div class="widget-subheading">By CEO</div>
-                                                </div>
-
-                                                <div class="widget-content-right">
-                                                    <button class=" btn btn-outline-success">View details</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </perfect-scrollbar>
-                </div>
-                <div class="text-right card-footer">
-                    <button class="btn btn-primary">Add Song</button>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</body>
+    </ul>
+</div>
+</div>
+<div class="content">
+</div>
+</div>

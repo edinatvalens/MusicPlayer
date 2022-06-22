@@ -9,8 +9,7 @@
     font-family: montserrat;
   }
   nav{
-    background: #D50000;
-    height: 80px;
+    background-image:linear-gradient(#d000ff,#1624e8);    height: 80px;
     width: 100%;
 margin:0;
   }
