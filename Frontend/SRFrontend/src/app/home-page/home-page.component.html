@@ -1,14 +1,77 @@
 <div class="all">
-<div class="wrapper">
+  <div class="wrapper">
     <div class="sidebar">
-        
-    <p class="myproject px-3">CATEGORIES</p>
-    <ul>
-        <li *ngFor="let c of Categories"><a href="#">{{c.name}}</a></li>
+      <br>
+      <p class="myproject px-3">CATEGORIES</p>
+      <ul>
+        <li (click)="Filter('All')" (click)="hide()"><a>All</a></li>
+        <li *ngFor="let c of Categories" (click)="Filter(c.id)" (click)="hide()"><a>{{c.name}}</a></li>
+      </ul><br><br><br>
+      <ul>
 
-    </ul>
-</div>
-</div>
-<div class="content">
-</div>
+        <li (click)="onClick()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
+
+      </ul><br>
+
+      <input id="search" type="search" placeholder="Search..." [(ngModel)]="searchtext" (ngModelChange)="Search()"
+        name="searchtext" />
+
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="player" [style.display]="showMain ? 'block' : 'none'">
+      <ul class="player__playlist list">
+
+        <li *ngFor="let s of Songs | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"
+          class="player__song">
+
+          <img class="player__img img" src="{{s.songcategory.categoryPic}}" alt="cover">
+
+          <p class="player__context ">
+
+            <b class="player__song-name">{{s.songName}} <span class="uppercase">NESTO</span> remix</b>
+            <span class="flex">
+
+              <span class="player__title">by {{s.artristName}}</span>
+              <span class="player__song-time">3.19</span>
+              <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
+            </span>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <pagination-controls class="pagination" (pageChange)="page = $event"></pagination-controls>
+
+
+    <div class="modal1" id="myModal" [style.display]="showModal1 ? 'block' : 'none'">
+
+      <ul class="player__playlist list">
+      
+        <h2> FAVORITE SONGS</h2>
+        <li *ngFor="let s of Favorites | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"
+          class="player__song">
+
+          <img class="player__img img" src="{{s.song.songcategory.categoryPic}}" alt="cover">
+
+          <p class="player__context ">
+
+            <b class="player__song-name">{{s.song.songName}} <span class="uppercase">NESTO</span> remix</b>
+            <span class="flex">
+
+              <span class="player__title">by {{s.song.artristName}}</span>
+              <span class="player__song-time">3.19</span>
+              <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
+            </span>
+          </p>
+        </li>
+
+      </ul>
+    </div>
+
+
+
+  </div>
+
+
 </div>

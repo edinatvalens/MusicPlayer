@@ -10,7 +10,34 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
     Songs:any;
     Categories:any;
+    Zam:any;
+    searchtext:any;
+    Favorites:any;
+    totalLength:any;
+    page:number = 1;
+
+    showModal1:boolean=false;
+    showMain:boolean=true;
+
+    
+
   constructor(private httpKlijent: HttpClient,private  router :Router) { }
+
+  onClick()
+  {
+    this.showMain=false;
+    this.showModal1 = true;
+
+  }
+  
+  hide()
+  {
+    this.showModal1 = false;
+    this.showMain=true;
+
+  }
+
+
 
   ngOnInit(): void {
     this.LoadSongs();
@@ -22,6 +49,7 @@ export class HomePageComponent implements OnInit {
     .subscribe(x=>{
       console.log("Songs", x);
       this.Songs = x;
+      this.Zam=x;
     });
 
   }
@@ -33,5 +61,32 @@ export class HomePageComponent implements OnInit {
       this.Categories = x;
     });
 
+  }
+  Filter(id:any){
+    if(id=='All'){
+      this.LoadSongs();
+    }
+    if(id!=null){
+      return this.Songs=this.Zam.filter((x:any)=> x.song_Category_id==id);
+    }
+  }
+  Search()
+  {
+    if(this.searchtext=="")
+    {
+      this.Songs=this.Zam;
+    }
+    else {
+     return this.Songs=this.Zam.filter((x:any)=> x.songName.toLowerCase().includes(this.searchtext));
+    }
+  }
+
+  LoadFavorites(){
+    this.httpKlijent.get("https://localhost:44308/Favorites/GetbyUser?id=1")
+    .subscribe(x=>{
+      console.log("Favorites", x);
+      this.Favorites=x;
+    });
+    
   }
 }

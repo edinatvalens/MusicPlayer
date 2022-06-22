@@ -47,7 +47,7 @@ namespace SRBackend.Controllers
         public IActionResult GetbyUser(int id)
         {
 
-            return Ok(_dbContext.Favorites.Include(s => s.song).Where(a => a.UserID == id));
+            return Ok(_dbContext.Favorites.Include(s => s.song).Include(s => s.song.songcategory).Where(a => a.UserID == id));
 
         }
 
