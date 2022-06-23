@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { AutentifikacijaHelper } from '../_helpers/autentifikacija-helper';
 
 @Component({
   selector: 'app-home-page',
@@ -15,6 +16,9 @@ export class HomePageComponent implements OnInit {
     Favorites:any;
     totalLength:any;
     page:number = 1;
+    Rating:any;
+    isLog:boolean=AutentifikacijaHelper.getLoginInfo().isLogiran;
+  
 
     showModal1:boolean=false;
     showMain:boolean=true;

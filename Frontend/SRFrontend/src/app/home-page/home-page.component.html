@@ -1,3 +1,5 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="all">
   <div class="wrapper">
     <div class="sidebar">
@@ -9,7 +11,7 @@
       </ul><br><br><br>
       <ul>
 
-        <li (click)="onClick()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
+        <li *ngIf="isLog==true" (click)="onClick()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
 
       </ul><br>
 
@@ -31,13 +33,32 @@
           <p class="player__context ">
 
             <b class="player__song-name">{{s.songName}} <span class="uppercase">NESTO</span> remix</b>
-            <span class="flex">
-
+            <span class="flex">         
               <span class="player__title">by {{s.artristName}}</span>
-              <span class="player__song-time">3.19</span>
+
               <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
             </span>
+            
           </p>
+          <div>
+            <span class="ratingg">Rating: {{s.songRating}}</span><br>
+            <div class="rating">
+            <input type="radio" name="rating" (click)="Rating=5"><label for="5">☆</label>
+            <input type="radio" name="rating" (click)="Rating=4"><label for="4">☆</label>
+            <input type="radio" name="rating" (click)="Rating=3"><label for="3">☆</label>
+            <input type="radio" name="rating" (click)="Rating=2"><label for="2">☆</label>
+            <input type="radio" name="rating" (click)="Rating=1"><label for="1">☆</label>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="button-div">
+          <button class="fav-button">
+              <i class="fa fa-star right"></i>
+              <span style="padding-right: 10px;">Favorites</span>
+          </button>
+          </div>
+      </div>
+
         </li>
       </ul>
     </div>
@@ -60,10 +81,25 @@
             <span class="flex">
 
               <span class="player__title">by {{s.song.artristName}}</span>
-              <span class="player__song-time">3.19</span>
+
+            
+
               <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
             </span>
           </p>
+
+          <div>
+            <span class="ratingg">Rating: {{s.song.songRating}}</span><br>
+            <div class="rating">
+            <input type="radio" name="rating" (click)="Rating=5"><label for="5">☆</label>
+            <input type="radio" name="rating" (click)="Rating=4"><label for="4">☆</label>
+            <input type="radio" name="rating" (click)="Rating=3"><label for="3">☆</label>
+            <input type="radio" name="rating" (click)="Rating=2"><label for="2">☆</label>
+            <input type="radio" name="rating" (click)="Rating=1"><label for="1">☆</label>
+          </div>
+        </div>
+       
+
         </li>
 
       </ul>
