@@ -8,6 +8,7 @@
     <li><a href="">HOME</a></li>
     <li> <a (click)="logout()">{{isLog ? 'Logout' : 'Login'}}</a></li>
     <li><a *ngIf="isLog==false" href="registration">REGISTRATION</a></li>
+    <li><a *ngIf="isLog==true" href="add-song">ADD SONG</a></li>
   </ul>
 </nav>
 <section>

@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Georgia, serif;
+}
+
+
+body {
+    background-color: #f6fafb;
+    font-size: 16px;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    display: block;
+    margin-top: 1em;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px #333;
+
+}
+
+.icon-info:hover {
+    cursor: pointer;
+}
+
+.info {
+    padding: 1em;
+    position: relative;
+    font-family: 'Merriweather Sans';
+    color: #8b9195;
+    background-image: linear-gradient(#ffffff5e, #00000063);
+    border-radius: 10px;
+    width: 100%;
+
+
+}
+
+
+.caratula {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 220px;
+    position: relative;
+}
+
+.caratula img {
+    width: 100%;
+    opacity: 0.7;
+    position: relative;
+    object-fit: cover;
+}
+
+.video {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 320px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-image: linear-gradient(#ffffff5e, #00000063);
+
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-bottom: .2em;
+    text-shadow: black 1px 1px 0;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 400;
+    color: black;
+}
+
+.elapsed {
+    margin-bottom: 1em;
+    font-size: .8em;
+    color: black;
+}
+
+.btn {
+    font-size: 1em;
+    color: #ecf0f1;
+}
+
+.more {
+    background: linear-gradient(#8CA6DB, #B993D6);
+    padding: 0.3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    color: black;
+    border-radius: 20px;
+}
+.moreright {
+    background: linear-gradient(#b0092d61, #000000);
+    padding: 0.25em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 999;
+    color: black;
+    border-radius: 20px;
+}
+
+.moreleft {
+    background: linear-gradient(#16c7693d, #000000);
+    padding: 0.25em;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 999;
+    color: black;
+    border-radius: 20px;
+}
+
+.more:hover+.bio {
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+}
+
+.bio {
+    border-radius: 10px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(#8CA6DB, #B993D6);
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: .8em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.bio h2 {
+    font-family: 'Roboto';
+    text-shadow: none;
+    font-weight: 400;
+    margin-bottom: .5em;
+}
+
+.playpause {
+    background-color: #000000;
+    color: White;
+    padding: 14px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    text-decoration: none;
+
+}
+.edit{
+    position:fixed;
+    right:0;
+}
+@media(max-width: 600px){
+.container{
+    width: 300px;
+
+}
+
+}

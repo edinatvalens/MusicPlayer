@@ -1,10 +1,9 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 
 * {
     box-sizing: border-box;
-    color: white;
+    color: black;
+    
 }
 
 input[type=text],
@@ -14,7 +13,7 @@ select,
 option {
     width: 100%;
     padding: 15px;
-    margin: 5px 5px 22px 0;
+    margin: 5px 5px 12px 0;
     display: inline-block;
     border: none;
     color: black;
@@ -33,13 +32,16 @@ input[type=password]:focus {
 
 
 button {
-    background-color: white;
-    color: #D50000;
-    padding: 15.5px 20px;
+    font-size: large;
+    background-color: black;
+    color: white;
+    padding: 12.5px 20px;
     margin: 8px 0;
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border: 1px solid grey;
+
 }
 
 button:hover {
@@ -47,10 +49,10 @@ button:hover {
 }
 
 a {
-    padding: 14px 20px;
+
     margin: 8px 0;
     text-decoration: none;
-    color: #D50000;
+    color: black;
     opacity: 0.9;
 
 }
@@ -62,8 +64,10 @@ a:hover {
 }
 
 .cancelbtn {
-    padding: 14px 20px;
-    background-color: white;
+    font-size: large;
+    padding: 12.5px 20px;
+    background-color: black;
+    border: 1px solid grey;
 
 }
 
@@ -81,11 +85,10 @@ a:hover {
     border: 2px solid #333;
     border-radius: 10px;
     box-shadow: 10px 5px 5px #333;
-    width: 60%;
+    width: 40%;
     margin: auto;
     margin-top: 20px;
-    background-color: #0093E9;
-    background-image:linear-gradient(#a609d6, #000000);
+    background: linear-gradient(#8CA6DB, #B993D6);
 
 }
 

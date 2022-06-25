@@ -8,6 +8,7 @@ namespace SRBackend.ViewModels
         public string SongName { get; set; }
         public string ArtristName { get; set; }
         public string SongUrl { get; set; }
+        public string SongLenght { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime EditDate { get; set; }
         public int SongCategoryID { get; set; }

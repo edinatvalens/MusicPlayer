@@ -8,7 +8,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 import { NgxPaginationModule } from "ngx-pagination";
-
+import { SongPageComponent } from './song-page/song-page.component';
+import { SafePipe } from './safe.pipe';
+import { AddSongPageComponent } from './add-song-page/add-song-page.component';
+import { EditSongComponent } from './edit-song/edit-song.component';
 
 
 @NgModule({
@@ -17,6 +20,11 @@ import { NgxPaginationModule } from "ngx-pagination";
     HomePageComponent,
     LoginPageComponent,
     RegistrationPageComponent,
+    SongPageComponent,
+    SafePipe,
+    AddSongPageComponent,
+    EditSongComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,9 +32,9 @@ import { NgxPaginationModule } from "ngx-pagination";
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-
+    
   ],
-  providers: [],
+  providers: [SafePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

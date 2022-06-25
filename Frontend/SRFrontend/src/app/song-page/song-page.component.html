@@ -1,0 +1,40 @@
+<body>
+    <section class="container">
+        <div class="caratula">
+            <img src="{{song.songcategory.categoryPic}}">
+            <div class="more">
+                <div class="icon-info">More</div>
+            </div>
+            <div class="bio">
+                <h2>{{song.songName}}</h2>
+                <p>by {{song.artristName}}</p>
+                <p>Added: {{song.addedDate.substring(5,7)+
+                    "."+song.addedDate.substring(8,10)+"."+song.addedDate.substring(0,4)}}</p>
+                <p>Edited: {{song.editDate.substring(5,7)+
+                    "."+song.editDate.substring(8,10)+"."+song.editDate.substring(0,4)}}</p>
+                <p>Category: {{song.songcategory.name}}</p>
+            </div>
+        </div>
+        <div *ngIf="showDetails==true" class="info">
+            <div class="moreright">
+                <div class="icon-info" (click)="DeleteSong(song.id)" >Delete</div>
+            </div>
+            <div class="moreleft">
+                <a href="edit-song/{{song.id}}">
+                <div class="icon-info" >Edit</div>
+                </a>
+            </div>     
+        </div>
+        <div *ngIf="showDetails==true" class="info">
+            <div class="elapsed">{{song.songLenght}}</div>
+            <h2>{{song.songName}}</h2>
+            <h3>by {{song.artristName}}</h3>
+            <button class="playpause" (click)="onClick()">Play song!</button>
+        </div>
+        <div *ngIf="showVideo==true" class="video">
+            <iframe width="100%" height="80%" [src]="song.songUrl | youtube">
+            </iframe>
+            <button class="playpause" (click)="hide()">Hide song!</button>
+        </div>
+    </section>
+</body>

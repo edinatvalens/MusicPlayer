@@ -1,0 +1,48 @@
+<body>
+    <div class="container">
+      <div class="title">Add song</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Song name</span>
+              <input [(ngModel)]="sName" type="text" placeholder="Enter song name" name="sName" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Artrist name</span>
+              <input [(ngModel)]="sArtist" type="text" placeholder="Enter artrist name" name="sArtist" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Song embad url</span>
+              <input [(ngModel)]="sUrl" type="text" placeholder="Paste url" name="sUrl" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Song lenght</span>
+              <input [(ngModel)]="sLenght" type="text" placeholder="Enter song lenght"  name="sLenght" required>
+            </div>
+            
+           
+          </div>
+          <div class="input-box">
+            <select  [(ngModel)]="sCategory" #cat="ngModel" class="select-box-s" name="sCat" required>
+                <option value="undefined" disabled selected>
+                  Select song category
+                </option>
+                <option  *ngFor="let obj of Categories" name="txtBrend"
+                    [value]="obj.id"
+                        ngDefaultControl>{{obj?.name}}
+                  <div *ngIf="cat.touched && cat.invalid" class="alert-danger">
+                    Obavezno polje
+                  </div>
+                </option>
+              </select>
+            
+          </div>
+          <div class="button"  (click)="btnAddSong()">
+            <input type="submit" value="Add song">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </body>

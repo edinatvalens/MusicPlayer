@@ -18,9 +18,9 @@ export class HomePageComponent implements OnInit {
     page:number = 1;
     Rating:any;
     isLog:boolean=AutentifikacijaHelper.getLoginInfo().isLogiran;
-  
-
+    clicked:any;
     showModal1:boolean=false;
+    showSongM:boolean=false;
     showMain:boolean=true;
 
     
@@ -38,7 +38,15 @@ export class HomePageComponent implements OnInit {
   {
     this.showModal1 = false;
     this.showMain=true;
+    this.showSongM=false;
 
+
+  }
+  showSong(s:any){
+    this.showSongM=true;
+    this.showModal1 = false;
+    this.showMain=false;
+    this.clicked=s;
   }
 
 
@@ -86,11 +94,74 @@ export class HomePageComponent implements OnInit {
   }
 
   LoadFavorites(){
-    this.httpKlijent.get("https://localhost:44308/Favorites/GetbyUser?id=1")
+    this.httpKlijent.get("https://localhost:44308/Favorites/GetbyUser?id="+AutentifikacijaHelper.getLoginInfo().autentifikacijaToken.korisnickiNalogId)
     .subscribe(x=>{
       console.log("Favorites", x);
       this.Favorites=x;
     });
     
+  }
+  AddToFavorites(song:any){
+    if(AutentifikacijaHelper.getLoginInfo().isLogiran==false){
+      alert("You must be logged in to add song to favorites!")
+    }
+    if(AutentifikacijaHelper.getLoginInfo().isLogiran==true){
+    let saljemo = {
+      userID: AutentifikacijaHelper.getLoginInfo().autentifikacijaToken.korisnickiNalogId,
+      songID: song
+    };
+
+    this.httpKlijent.post("https://localhost:44308/Favorites/Add", saljemo)
+      .subscribe((x: any) => {
+        if (x == true) {
+          alert("Song added successfuly to favorites!");
+    
+        }
+        else {
+          alert("Error, song is already in your favorites!");
+        }
+      });
+    }
+  }
+  DeleteFromFavorites(id:any){
+       let userID:any = AutentifikacijaHelper.getLoginInfo().autentifikacijaToken.korisnickiNalogId;
+
+    this.httpKlijent.delete("https://localhost:44308/Favorites/Delete?idU="+userID+"&idS="+id)
+    .subscribe((x: any) => {
+      if (x != null) {
+        alert("Song deleted successfuly to favorites!");
+        this.LoadFavorites();
+      }
+      else {
+        alert("Error, something went wrong!");
+      }
+    });
+  }
+  RateSong(id:any, rate:any, isFav:boolean){
+    if(AutentifikacijaHelper.getLoginInfo().isLogiran==false){
+      alert("You must be logged in to rate song!")
+    }
+    if(AutentifikacijaHelper.getLoginInfo().isLogiran==true){
+    let saljemo={
+      songID: id,
+      userID: AutentifikacijaHelper.getLoginInfo().autentifikacijaToken.korisnickiNalogId,
+      rating: rate
+
+    }
+    this.httpKlijent.post("https://localhost:44308/VoteRating/Add", saljemo)
+    .subscribe((x: any) => {
+      
+      if (x != null) {
+        alert("Song rated successfuly!");
+        this.LoadSongs();
+        if(isFav==true){
+        this.LoadFavorites();
+        }
+      }
+      else {
+        alert("Error, you need to be logged in to add in favorites!");
+      }
+    });
+  }
   }
 }

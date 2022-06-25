@@ -24,11 +24,11 @@ namespace SRBackend.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromBody] FavoritesAddVM x)
+        public bool Add([FromBody] FavoritesAddVM x)
         {
             Favorites check = null;
             check= _dbContext.Favorites.FirstOrDefault(a => a.SongID == x.SongID && a.UserID == x.UserID);
-            if (check != null) return Ok("Already in favorites!");
+            if (check != null) return false;
 
             var newFav = new Favorites()
             {
@@ -39,7 +39,7 @@ namespace SRBackend.Controllers
 
             _dbContext.Add(newFav);
             _dbContext.SaveChanges();
-            return Ok(newFav);
+            return true;
         }
 
 
@@ -51,7 +51,7 @@ namespace SRBackend.Controllers
 
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public ActionResult Delete(int idU, int idS)
         {
            

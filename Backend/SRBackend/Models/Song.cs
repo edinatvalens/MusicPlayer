@@ -10,6 +10,7 @@ namespace SRBackend.Models
         public string SongName { get; set; }
         public string ArtristName { get; set; }
         public string SongUrl { get; set; }
+        public string SongLenght { get; set; }
         public float SongRating { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime EditDate { get; set; }

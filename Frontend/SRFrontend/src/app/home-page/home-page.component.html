@@ -10,104 +10,75 @@
         <li *ngFor="let c of Categories" (click)="Filter(c.id)" (click)="hide()"><a>{{c.name}}</a></li>
       </ul><br><br><br>
       <ul>
-
         <li *ngIf="isLog==true" (click)="onClick()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
-
       </ul><br>
-
       <input id="search" type="search" placeholder="Search..." [(ngModel)]="searchtext" (ngModelChange)="Search()"
         name="searchtext" />
-
     </div>
   </div>
-
   <div class="content">
     <div class="player" [style.display]="showMain ? 'block' : 'none'">
       <ul class="player__playlist list">
-
         <li *ngFor="let s of Songs | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"
           class="player__song">
-
-          <img class="player__img img" src="{{s.songcategory.categoryPic}}" alt="cover">
-
-          <p class="player__context ">
-
+          <img class="player__img img" src="{{s.songcategory.categoryPic}}" alt="cover" (click)="showSong(s)">
+          <p class="player__context " (click)="showSong(s)">
             <b class="player__song-name">{{s.songName}} <span class="uppercase">NESTO</span> remix</b>
-            <span class="flex">         
+            <span class="flex">
               <span class="player__title">by {{s.artristName}}</span>
-
-              <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
             </span>
-            
           </p>
           <div>
-            <span class="ratingg">Rating: {{s.songRating}}</span><br>
+            <span class="ratingg">Rating: {{s.songRating.toString().slice(0,4)}}</span>
             <div class="rating">
-            <input type="radio" name="rating" (click)="Rating=5"><label for="5">☆</label>
-            <input type="radio" name="rating" (click)="Rating=4"><label for="4">☆</label>
-            <input type="radio" name="rating" (click)="Rating=3"><label for="3">☆</label>
-            <input type="radio" name="rating" (click)="Rating=2"><label for="2">☆</label>
-            <input type="radio" name="rating" (click)="Rating=1"><label for="1">☆</label>
+              <input type="radio" name="rating"><label (click)="RateSong(s.id, 5,false)">☆</label>
+              <input type="radio" name="rating"><label (click)="RateSong(s.id, 4,false)">☆</label>
+              <input type="radio" name="rating"><label (click)="RateSong(s.id, 3,false)">☆</label>
+              <input type="radio" name="rating"><label (click)="RateSong(s.id, 2,false)">☆</label>
+              <input type="radio" name="rating"><label (click)="RateSong(s.id, 1,false)">☆</label>
+            </div>
           </div>
-        </div>
-        <div class="main-div">
-          <div class="button-div">
-          <button class="fav-button">
-              <i class="fa fa-star right"></i>
-              <span style="padding-right: 10px;">Favorites</span>
-          </button>
+          <div class="main-div" (click)="AddToFavorites(s.id)">
+            <div class="button-div">
+              <button class="fav-button">
+                <i class="fa fa-star right"></i>
+                <span style="padding-right: 10px;">Favorites</span>
+              </button>
+            </div>
           </div>
-      </div>
-
         </li>
       </ul>
     </div>
-    <pagination-controls class="pagination" (pageChange)="page = $event"></pagination-controls>
-
-
+    <pagination-controls *ngIf="showSongM==false" class="pagination" (pageChange)="page = $event"></pagination-controls>
     <div class="modal1" id="myModal" [style.display]="showModal1 ? 'block' : 'none'">
-
       <ul class="player__playlist list">
-      
         <h2> FAVORITE SONGS</h2>
         <li *ngFor="let s of Favorites | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"
           class="player__song">
-
-          <img class="player__img img" src="{{s.song.songcategory.categoryPic}}" alt="cover">
-
-          <p class="player__context ">
-
+          <img class="player__img img" src="{{s.song.songcategory.categoryPic}}" alt="cover"  (click)="showSong(s.song)">
+          <p class="player__context "  (click)="showSong(s.song)">
             <b class="player__song-name">{{s.song.songName}} <span class="uppercase">NESTO</span> remix</b>
             <span class="flex">
-
               <span class="player__title">by {{s.song.artristName}}</span>
-
-            
-
-              <!--   <span class="player__song-time">Added: {{s.addedDate.substring(5,7)+ "."+s.addedDate.substring(8,10)+"."+s.addedDate.substring(0,4)}}</span> -->
             </span>
           </p>
-
           <div>
-            <span class="ratingg">Rating: {{s.song.songRating}}</span><br>
+            <span class="ratingg">Rating: {{s.song.songRating.toString().slice(0,4)}}</span><br>
             <div class="rating">
-            <input type="radio" name="rating" (click)="Rating=5"><label for="5">☆</label>
-            <input type="radio" name="rating" (click)="Rating=4"><label for="4">☆</label>
-            <input type="radio" name="rating" (click)="Rating=3"><label for="3">☆</label>
-            <input type="radio" name="rating" (click)="Rating=2"><label for="2">☆</label>
-            <input type="radio" name="rating" (click)="Rating=1"><label for="1">☆</label>
+              <input type="radio"><label (click)="RateSong(s.song.id, 5,true)">☆</label>
+              <input type="radio"><label (click)="RateSong(s.song.id, 4,true)">☆</label>
+              <input type="radio"><label (click)="RateSong(s.song.id, 3,true)">☆</label>
+              <input type="radio"><label (click)="RateSong(s.song.id, 2,true)">☆</label>
+              <input type="radio"><label (click)="RateSong(s.song.id, 1,true)">☆</label>
+            </div>
           </div>
-        </div>
-       
-
+          <button class="btn btn-delete" (click)="DeleteFromFavorites(s.song.id)">
+            <span>X</span>
+          </button>
         </li>
-
       </ul>
     </div>
-
-
-
+    <app-song-page *ngIf="showSongM==true" [song]="clicked"></app-song-page>
   </div>
-
 
 </div>

@@ -4,27 +4,26 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: arial;
+    font-family: Georgia, serif;
+
 }
-.pagination{
+
+.pagination {
     position: fixed;
     bottom: 0;
     right: 35%;
 }
 
-
-
-
 .all {
+
     display: flex;
     flex-direction: row;
     height: 100%;
-
 }
 
 .content {
     width: 100%;
-    overflow-y:scroll;
+    overflow-y: scroll;
 
 }
 
@@ -35,8 +34,7 @@
 .sidebar {
     width: 100%;
     height: 100%;
-    background-color: #0093E9;
-    background-image: linear-gradient(#a609d6, #000000);
+    background: linear-gradient(#8CA6DB, #B993D6);
 
 }
 
@@ -45,7 +43,7 @@
 }
 
 .wrapper .sidebar ul li a {
-    color: white;
+    color: black;
     display: block;
 }
 
@@ -59,6 +57,7 @@
 
 .wrapper .sidebar ul li:hover {
     background: #311B92;
+    cursor: pointer;
 }
 
 .wrapper .sidebar ul li a:hover {
@@ -67,7 +66,7 @@
 }
 
 .myproject {
-    color: white;
+    color: black;
     font-size: 14px;
     margin-bottom: 0;
 }
@@ -82,29 +81,18 @@ button {
     cursor: pointer;
     width: 100%;
     text-decoration: none;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     opacity: 0.8;
-    cursor: pointer;  
-  }
-  h2{
+    cursor: pointer;
+}
+
+h2 {
     margin-bottom: 15px;
-  }
-
-
-
-
-
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
-
-
-
-
-
-
-
 
 
 .flex {
@@ -132,8 +120,6 @@ button {
 
 }
 
-
-
 .player__img {
 
     width: 3.22em;
@@ -150,9 +136,6 @@ button {
 
 }
 
-
-
-
 .player__context {
 
     margin: 0;
@@ -165,10 +148,6 @@ button {
 
 }
 
-
-
-
-
 .player__title {
 
     font-size: .7em;
@@ -177,7 +156,6 @@ button {
 
 }
 
-
 .player__playlist {
 
     height: 100%;
@@ -185,11 +163,11 @@ button {
     padding: 1.05em .9em 0 1.2em;
 
 }
-.player__playlist li:hover{
-    background-image: linear-gradient(#a609d65e, #00000063);
+
+.player__playlist li:hover {
+    background: linear-gradient(#8ca6db85, #b993d682);
     border-radius: 20px;
 }
-
 
 .player__song {
 
@@ -222,25 +200,23 @@ button {
     align-self: flex-end;
 
 }
+
 .ratingg {
-    
+
     font-size: .75em;
     font-weight: bold;
     color: #00000079;
-    align-self:center;
-    
-
+    align-self: center;
 }
 
-
-
-  input {
+input {
     border: 0;
-    color: white;
+    color: black;
     font-size: 1.3rem;
-  }
-  input[type="search"] {
-    border:1px solid #30f005 ;
+}
+
+input[type="search"] {
+    border: 1px solid #a609d6;
     outline: 0;
     width: 100%;
     color: white;
@@ -250,139 +226,214 @@ button {
     appearance: none;
     z-index: 1;
     position: relative;
+}
 
-  }
- 
- 
-
-.modal1{
-
+.modal1 {
     height: 100%;
     width: 100%;
-
 }
-  
-
 
 .rating {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: right;
-  
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
 }
 
-.rating > input{ display:none;}
+.rating>input {
+    display: none;
+}
 
-.rating > label {
-  position: relative;
+.rating>label {
+    position: relative;
     width: 1em;
     font-size: 2vw;
     color: #FFD600;
     cursor: pointer;
 }
-.rating > label::before{ 
-  content: "\2605";
-  position: absolute;
-  opacity: 0;
-}
-.rating > label:hover:before,
-.rating > label:hover ~ label:before {
-  opacity: 1 !important;
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
 }
 
-.rating > input:checked ~ label:before{
-  opacity:1;
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important;
 }
 
-.rating:hover > input:checked ~ label:before{ opacity: 0.4; }
-
-body{ background: #222225; color: white;}
-
-
-h1{
-    margin-top:50px;
+.rating>input:checked~label:before {
+    opacity: 1;
 }
-p{ font-size: 1.2rem;}
-@media only screen and (max-width: 600px) {
-  h1{font-size: 14px;}
-  p{font-size: 12px;}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4;
+}
+
+body {
+    background: #222225;
+    color: white;
 }
 
 
-
-
-
-
-.main-div{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+h1 {
+    margin-top: 50px;
 }
 
-.button-div{
-    padding:15px;
-    position:relative;
+p {
+    font-size: 1.2rem;
 }
 
-.fav-button{
-    border:none;
-    height:40px;
-    width:120px;
-    font-size:15px;
-    background-color:#000;
-    color:#fff;
-    border-radius:5px;
-    cursor:pointer;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    
+
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.fav-button i{
-    position:absolute;
-    left:70px;
+.button-div {
+    padding: 15px;
+    position: relative;
+}
+
+.fav-button {
+    border: none;
+    height: 40px;
+    width: 120px;
+    font-size: 15px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fav-button i {
+    position: absolute;
+    left: 70px;
 
 }
 
 .fav-button:active i {
-    
+
     animation: item 1s ease-in forwards;
 }
 
-
 @keyframes item {
     0% {
-        
         top: 20%;
-        color:#000;
-        
+        color: #000;
     }
 
     25% {
         top: 60%;
-        color:#000;
-        
+        color: #000;
     }
 
     50% {
-        
         top: 100%;
-        
-     
     }
 
     75% {
-        
         top: 60%;
-    
-    
     }
 
     0% {
-        top:0%;
+        top: 0%;
     }
 }
-.right{
+
+.right {
     right: 0;
+}
+
+.btn {
+    background: none;
+    height: 60px;
+    padding-left: 20px;
+    cursor: pointer;
+    margin: 0;
+    width: 10px;
+
+}
+
+.btn-delete {
+    font-size: 20px;
+    color: red;
+}
+
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+    .all{
+        display: flex;
+        flex-direction: column; 
+    }
+    .wrapper{
+        width: 100%;
+        height: 35%;
+        overflow: scroll;
+        background: rgb(0, 0, 0);
+
+    }
+
+    .player__context{
+        width: 100%;
+    }
+
+    .ratingg{
+        display: flex;
+        justify-content: right;
+        margin-top:20px;
+        margin-bottom: 5px;
+        font-size: 10px;
+    }
+    .rating>label {
+        position: relative;
+        width: 1em;
+        font-size: 5vw;
+        color: #FFD600;
+        cursor: pointer;
+    }
+    .player__song{
+        display: flex;
+        flex-direction: row;
+    }
+  
+
+    .button-div {
+        padding: 10px;
+        position: relative;
+    }
+    
+    .fav-button {
+        border: none;
+        height: 40px;
+        width: 60px;
+        font-size: 12px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .fav-button i {
+        position: absolute;
+        left: 55px;
+    
+    }
+
 }
