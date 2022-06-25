@@ -1,1 +1,46 @@
-<p>edit-song works!</p>
+<body>
+    <div class="container">
+      <div class="title">Edit song</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Edit song name</span>
+              <input [(ngModel)]="song.songName" type="text" placeholder="Enter song name" name="sName" required [ngModelOptions]="{name: 'songName'}">
+            </div>
+            <div class="input-box">
+              <span class="details">Edit artrist name</span>
+              <input [(ngModel)]="song.artristName" type="text" placeholder="Enter artrist name" name="sArtist" required [ngModelOptions]="{name: 'songArtrist'}">
+            </div>
+            <div class="input-box">
+              <span class="details">Edit embad url</span>
+              <input [(ngModel)]="song.songUrl" type="text" placeholder="Paste url" name="sUrl" required [ngModelOptions]="{name: 'songUrl'}">
+            </div>
+            <div class="input-box">
+              <span class="details">Edit song lenght</span>
+              <input [(ngModel)]="song.songLenght" type="text" placeholder="Enter song lenght"  name="sLenght" required [ngModelOptions]="{name: 'songLenght'}">
+            </div>
+          </div>
+          <div class="input-box">
+            <select  [(ngModel)]="song.song_Category_id" #cat="ngModel" class="select-box-s" name="sCat" required [ngModelOptions]="{name: 'Category'}">
+                <option value="undefined" disabled selected>
+                  Select song category
+                </option>
+                <option  *ngFor="let obj of Categories" name="txtBrend"
+                    [value]="obj.id"
+                        ngDefaultControl>{{obj?.name}}
+                  <div *ngIf="cat.touched && cat.invalid" class="alert-danger">
+                    Obavezno polje
+                  </div>
+                </option>
+              </select>
+            
+          </div>
+          <div class="button"  (click)="btnAddSong()">
+            <input type="submit" value="Edit song">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </body>
