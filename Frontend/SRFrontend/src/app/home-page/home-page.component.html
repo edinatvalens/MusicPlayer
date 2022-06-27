@@ -23,9 +23,9 @@
           class="player__song">
           <img class="player__img img" src="{{s.songcategory.categoryPic}}" alt="cover" (click)="showSong(s)">
           <p class="player__context " (click)="showSong(s)">
-            <b class="player__song-name">{{s.songName}} <span class="uppercase">NESTO</span> remix</b>
+            <b class="player__song-name">{{s.songName}}</b>
             <span class="flex">
-              <span class="player__title">by {{s.artristName}}</span>
+              <span class="player__title">{{s.artristName}}</span>
             </span>
           </p>
           <div>
@@ -57,9 +57,9 @@
           class="player__song">
           <img class="player__img img" src="{{s.song.songcategory.categoryPic}}" alt="cover"  (click)="showSong(s.song)">
           <p class="player__context "  (click)="showSong(s.song)">
-            <b class="player__song-name">{{s.song.songName}} <span class="uppercase">NESTO</span> remix</b>
+            <b class="player__song-name">{{s.song.songName}} </b>
             <span class="flex">
-              <span class="player__title">by {{s.song.artristName}}</span>
+              <span class="player__title">{{s.song.artristName}}</span>
             </span>
           </p>
           <div>

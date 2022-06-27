@@ -57,6 +57,27 @@ namespace SRBackend.Controllers
             _dbContext.SaveChanges();
             return newSong;
         }
+        [HttpPost("{id}")]
+        public bool EditSong(int id, [FromBody] SongAddVM x )
+        {
+
+            Song song = _dbContext.Song.FirstOrDefault(s => s.Id == id);
+
+            if (song == null)
+                return true;
+
+            song.SongName = x.SongName;
+            song.ArtristName = x.ArtristName;
+            song.SongUrl = x.SongUrl;
+            song.SongRating = x.SongRating;
+            song.SongLenght = x.SongLenght;
+            song.AddedDate = x.AddedDate;
+            song.EditDate = x.EditDate;
+            song.Song_Category_id = x.SongCategoryID;
+
+            _dbContext.SaveChanges();
+            return false;
+        }
 
         [HttpGet]
         public ActionResult<List<Song>> GetAll()

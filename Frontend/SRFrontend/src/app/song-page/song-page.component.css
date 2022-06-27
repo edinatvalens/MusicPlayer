@@ -109,7 +109,7 @@ h3 {
     top: 5px;
     right: 5px;
     z-index: 999;
-    color: black;
+    color: white;
     border-radius: 20px;
 }
 
@@ -120,10 +120,12 @@ h3 {
     top: 5px;
     left: 5px;
     z-index: 999;
-    color: black;
+    color: white;
     border-radius: 20px;
 }
-
+a{
+    color:white;
+}
 .more:hover+.bio {
     width: 100%;
     height: 100%;
@@ -132,7 +134,6 @@ h3 {
 
 .bio {
     border-radius: 10px;
-
     position: absolute;
     top: 0;
     right: 0;
@@ -142,7 +143,7 @@ h3 {
     color: black;
     font-family: 'Roboto';
     font-weight: 100;
-    font-size: .8em;
+    font-size: 1em;
     line-height: 1.5em;
     text-align: center;
 }

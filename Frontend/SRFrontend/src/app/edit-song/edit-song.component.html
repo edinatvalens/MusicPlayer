@@ -22,8 +22,8 @@
             </div>
           </div>
           <div class="input-box">
-            <select  [(ngModel)]="song.song_Category_id" #cat="ngModel" class="select-box-s" name="sCat" required [ngModelOptions]="{name: 'Category'}">
-                <option value="undefined" disabled selected>
+            <select  [(ngModel)]="song.song_Category_id" #cat="ngModel" class="select-box-s" name="sCat" required [ngModelOptions]="{name: 'Category'}" >
+                <option [value]="song.song_Category_id" disabled selected>
                   Select song category
                 </option>
                 <option  *ngFor="let obj of Categories" name="txtBrend"

@@ -3,16 +3,18 @@
         <div class="caratula">
             <img src="{{song.songcategory.categoryPic}}">
             <div class="more">
-                <div class="icon-info">More</div>
+                <div class="icon-info">More details</div>
             </div>
             <div class="bio">
                 <h2>{{song.songName}}</h2>
-                <p>by {{song.artristName}}</p>
+                <p>{{song.artristName}}</p>
                 <p>Added: {{song.addedDate.substring(5,7)+
                     "."+song.addedDate.substring(8,10)+"."+song.addedDate.substring(0,4)}}</p>
                 <p>Edited: {{song.editDate.substring(5,7)+
                     "."+song.editDate.substring(8,10)+"."+song.editDate.substring(0,4)}}</p>
                 <p>Category: {{song.songcategory.name}}</p>
+                <p>Song Rating: {{song.songRating}}</p>
+
             </div>
         </div>
         <div *ngIf="showDetails==true" class="info">
