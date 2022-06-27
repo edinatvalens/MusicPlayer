@@ -32,9 +32,13 @@
       <a href="https://policies.google.com/privacy?hl=en-US" style="color:dodgerblue">Terms & Privacy</a>
       .
     </p>
-    <div class="clearfix">
-      <a class="cancelbtn" href="login">Cancel</a>
-      <button class="signupbtn" (click)="Registration()">Sign Up</button>
+    <div class="buttons">
+    <div class="button">
+     <a href="login"> <input type="submit" value="Cancel"></a> 
     </div>
+    <div class="button"  (click)="Registration()">
+      <a href="registration"><input type="submit" value="Sign up"></a>
+    </div>
+  </div>
   </div>
 </div>

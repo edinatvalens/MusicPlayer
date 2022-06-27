@@ -96,6 +96,7 @@ h3 {
     background: linear-gradient(#8CA6DB, #B993D6);
     padding: 0.3em;
     position: absolute;
+    border: 1px solid black;
     top: 0;
     right: 0;
     z-index: 999;
@@ -112,16 +113,24 @@ h3 {
     color: white;
     border-radius: 20px;
 }
+.moreright:hover{
+    background: linear-gradient(#000000, #b0092d61);
+
+}
 
 .moreleft {
     background: linear-gradient(#16c7693d, #000000);
     padding: 0.25em;
     position: absolute;
     top: 5px;
-    left: 5px;
+    right: 62px;
     z-index: 999;
     color: white;
     border-radius: 20px;
+}
+.moreleft:hover{
+    background: linear-gradient(#000000, #16c7693d);
+
 }
 a{
     color:white;
@@ -158,6 +167,7 @@ a{
 .playpause {
     background-color: #000000;
     color: White;
+    border-radius: 15px;
     padding: 14px 20px;
     font-size: 14px;
     border: none;

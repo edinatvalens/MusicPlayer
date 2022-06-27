@@ -12,7 +12,7 @@ input[type=date],
 select,
 option {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     margin: 5px 5px 12px 0;
     display: inline-block;
     border: none;
@@ -31,37 +31,34 @@ input[type=password]:focus {
 }
 
 
-button {
-    font-size: large;
-    background-color: black;
-    color: white;
-    padding: 12.5px 20px;
-    margin: 8px 0;
-    cursor: pointer;
+
+.button{
+    width: 50%;
+    height: 35px;
+    margin: 10px 0
+  }
+  
+  .button input{
+    height: 100%;
     width: 100%;
-    opacity: 0.9;
-    border: 1px solid grey;
-
-}
-
-button:hover {
-    opacity: 1;
-}
-
-a {
-
-    margin: 8px 0;
-    text-decoration: none;
+    border-radius: 5px;
+    border: none;
     color: black;
-    opacity: 0.9;
-
-}
-
-a:hover {
-    opacity: 1;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     cursor: pointer;
-
-}
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+   .button input:hover{
+   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+   }
+   .buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   }
 
 .cancelbtn {
     font-size: large;

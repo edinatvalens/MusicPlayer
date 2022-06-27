@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
+import { AutentifikacijaHelper } from '../_helpers/autentifikacija-helper';
 
 @Component({
   selector: 'app-song-page',
@@ -13,6 +14,7 @@ export class SongPageComponent implements OnInit {
   showVideo:boolean=false;
   showDetails:boolean=true;
   safeUrl:any;
+  isLog:boolean=AutentifikacijaHelper.getLoginInfo().isLogiran;
 
   constructor(private sanitizer: DomSanitizer,private httpKlijent: HttpClient,private router: Router) { }
 
