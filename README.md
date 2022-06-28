@@ -3,14 +3,18 @@
 # How to:
 
 1.)Download this repo
+
 2.)To start frontend part you need to cd it in visual studio code, after type npm install in console and, when is finished npm start!
+
 3.)To start backend part you need to start SRBackend.sln and press F5!
+
 4.)Enjoy :)
 
   Login test:
     Username:test, Password:test
 
 #Task
+
 My Music App
 
 Description
