@@ -103,7 +103,7 @@ export class HomePageComponent implements OnInit {
       this.Songs=this.Zam;
     }
     else {
-     return this.Songs=this.Zam.filter((x:any)=> x.songName.toLowerCase().includes(this.searchtext));
+     return this.Songs=this.Zam.filter((x:any)=> x.songName.toLowerCase().includes(this.searchtext.toLowerCase()));
     }
   }
 
