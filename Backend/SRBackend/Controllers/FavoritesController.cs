@@ -28,7 +28,7 @@ namespace SRBackend.Controllers
         {
             Favorites check = null;
             check= _dbContext.Favorites.FirstOrDefault(a => a.SongID == x.SongID && a.UserID == x.UserID);
-            if (check != null) return false;
+            if (check != null) return false; //provjera da li je korisnik vec dodao bas tu pjesmu u favorite... ako jest vraca false
 
             var newFav = new Favorites()
             {
@@ -36,7 +36,7 @@ namespace SRBackend.Controllers
                 SongID = x.SongID
                 
             };
-
+            //dodavanje nove favorite pjesme
             _dbContext.Add(newFav);
             _dbContext.SaveChanges();
             return true;
@@ -55,12 +55,12 @@ namespace SRBackend.Controllers
         public ActionResult Delete(int idU, int idS)
         {
            
-            Favorites fav = _dbContext.Favorites.FirstOrDefault(s=> s.UserID==idU && s.SongID==idS);
+            Favorites fav = _dbContext.Favorites.FirstOrDefault(s=> s.UserID==idU && s.SongID==idS);//lociranje favorita za korisnika
 
             if (fav == null)
-                return BadRequest("Incorrect ID");
+                return BadRequest("Incorrect ID");//provjera da li postoji
 
-            _dbContext.Remove(fav);
+            _dbContext.Remove(fav);//brisanje favorita
             _dbContext.SaveChanges();
             return Ok(fav);
         }

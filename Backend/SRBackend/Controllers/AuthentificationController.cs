@@ -29,14 +29,14 @@ namespace SRBackend.Controllers
         {
 
             UserProfile logiraniKorisnik = _dbContext.UserProfile
-                .FirstOrDefault(k => k.Username != null && k.Username == x.username && k.Password == x.password);
+                .FirstOrDefault(k => k.Username != null && k.Username == x.username && k.Password == x.password);//nalazimo usera
 
-            if(logiraniKorisnik == null)
+            if(logiraniKorisnik == null)//provjeravamo da li postoji
             {
                 return null;
             }
 
-            string randomString = TokenGenerator.Generate(10);
+            string randomString = TokenGenerator.Generate(10);//pravimo random string od 10 karaktera
 
             var noviToken = new AutentifikacijaToken()
             {
@@ -44,9 +44,9 @@ namespace SRBackend.Controllers
                 vrijednost = randomString,
                 korisnickiNalog = logiraniKorisnik,
                 vrijemeEvideniranja = DateTime.Now
-            };
+            }; //dodjeljujemo token
 
-            _dbContext.Add(noviToken);
+            _dbContext.Add(noviToken);//dodajemo token u bazu
             _dbContext.SaveChanges();
 
             return new LoginInformacije(noviToken);
@@ -65,6 +65,7 @@ namespace SRBackend.Controllers
             _dbContext.SaveChanges();
             return Ok("Succes!");
         }
+
         [HttpGet]
         public ActionResult<AutentifikacijaToken> Get()
         {

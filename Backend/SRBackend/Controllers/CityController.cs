@@ -20,13 +20,13 @@ namespace SRBackend.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            return Ok(_dbContext.City.FirstOrDefault(s => s.Id == id));
+            return Ok(_dbContext.City.FirstOrDefault(s => s.Id == id));//vraca grad po ID
         }
 
         [HttpPost]
         public City Add([FromBody] CityAddVM x)
         {
-
+            
             var newcity = new City()
             {
                 Name = x.Name,

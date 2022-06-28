@@ -38,7 +38,8 @@ namespace SRBackend.Controllers
                 Name = x.Name,
 
             };
-            if (x.CategoryPic != null)
+
+            if (x.CategoryPic != null)//dodavanje slike za kategoriju, slike se pohranjuju u wwwroot/uploads
             {
                 string ekstenzija = Path.GetExtension(x.CategoryPic.FileName);
 
