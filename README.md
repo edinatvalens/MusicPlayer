@@ -1,5 +1,5 @@
 # SREdinTask
-
+# Comments are inside the project!
 # How to:
 
 1.)Download this repo
