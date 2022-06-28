@@ -14,7 +14,8 @@ export class AppComponent {
   constructor(private httpKlijent: HttpClient, private router: Router) {
   }
 
-  logout() {
+  logout() /*Logout funkcija koja autentifikaciju helper stavlja na null*/
+  {
     if (this.isLog == true) {
       this.httpKlijent.post("https://localhost:44308/Authentification/Logout", "")
         .subscribe((x: any) => {

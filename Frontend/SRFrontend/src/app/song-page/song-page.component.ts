@@ -35,18 +35,18 @@ export class SongPageComponent implements OnInit {
   {
     this.showVideo = false;
     this.showDetails=true;
-
   }
+
   getSafeUrl(url:any){
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/XztaW2MXPKs%22");
   }
+  
   DeleteSong(id:any){
     this.httpKlijent.delete("https://localhost:44308/Song/Delete/"+id)
     .subscribe((x: any) => {
       if (x != null) {
         alert("Song deleted!");
-        this.router.navigateByUrl("");
-
+        window.location.reload();
       }
       else {
         alert("Error, something went wrong!");

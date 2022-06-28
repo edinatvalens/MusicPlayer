@@ -22,21 +22,18 @@
             </div>
           </div>
           <div class="input-box">
-            <select  [(ngModel)]="song.song_Category_id" #cat="ngModel" class="select-box-s" name="sCat" required [ngModelOptions]="{name: 'Category'}" >
+            <select  [(ngModel)]="song.song_Category_id" class="select-box-s" name="sCat" required [ngModelOptions]="{name: 'Category'}" >
                 <option [value]="song.song_Category_id" disabled selected>
                   Select song category
                 </option>
                 <option  *ngFor="let obj of Categories" name="txtBrend"
                     [value]="obj.id"
                         ngDefaultControl>{{obj?.name}}
-                  <div *ngIf="cat.touched && cat.invalid" class="alert-danger">
-                    Obavezno polje
-                  </div>
                 </option>
               </select>
             
           </div>
-          <div class="button"  (click)="btnAddSong()">
+          <div class="button"  (click)="btnEditSong()">
             <input type="submit" value="Edit song">
           </div>
         </form>

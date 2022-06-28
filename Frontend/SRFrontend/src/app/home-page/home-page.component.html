@@ -6,21 +6,23 @@
       <br>
       <p class="myproject px-3">CATEGORIES</p>
       <ul>
-        <li (click)="Filter('All')" (click)="hide()"><a>All</a></li>
+        <!--Prikaz svih kategorija kao i prikaz u slucaju na klik na jedan od njih, all vraca korisnika na prikaz svih pjesama--> 
+        <li (click)="Filter('All')" (click)="hide()"><a>All</a></li> 
         <li *ngFor="let c of Categories" (click)="Filter(c.id)" (click)="hide()"><a>{{c.name}}</a></li>
       </ul><br><br><br>
       <ul>
-        <li *ngIf="isLog==true" (click)="onClick()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
+        <!--Provjera da li je korisnik logiran, ako jest prikazuje se mogucnost favorite liste--> 
+        <li *ngIf="isLog==true" (click)="showFavorites()" (click)="LoadFavorites()"><a>Your Favorite list</a></li>
       </ul><br>
+      <!--Search--> 
       <input id="search" type="search" placeholder="Search..." [(ngModel)]="searchtext" (ngModelChange)="Search()"
         name="searchtext" />
     </div>
   </div>
   <div class="content">
-    <div class="player" [style.display]="showMain ? 'block' : 'none'">
+    <div class="player" [style.display]="showMain ? 'block' : 'none'"><!--Prikaz pjesama, odredjene kategorije ili svih--> 
       <ul class="player__playlist list">
-        <li *ngFor="let s of Songs | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"
-          class="player__song">
+        <li *ngFor="let s of Songs | paginate: {itemsPerPage:9,currentPage:page,totalItems:totalLength}"class="player__song"><!--Pagination, 9 pjesama po stranici.--> 
           <img class="player__img img" src="{{s.songcategory.categoryPic}}" alt="cover" (click)="showSong(s)">
           <p class="player__context " (click)="showSong(s)">
             <b class="player__song-name">{{s.songName}}</b>
@@ -29,8 +31,8 @@
             </span>
           </p>
           <div>
-            <span class="ratingg">Rating: {{s.songRating.toString().slice(0,4)}}</span>
-            <div class="rating">
+            <span class="ratingg">Rating: {{s.songRating.toString().slice(0,4)}}</span><!--Prikaz rejtinga (Slice da bi prikazivalo samo 2 decimale)--> 
+            <div class="rating"> <!--Song rating i slanje vrijednosti od 1 do 5--> 
               <input type="radio" name="rating"><label (click)="RateSong(s.id, 5,false)">☆</label>
               <input type="radio" name="rating"><label (click)="RateSong(s.id, 4,false)">☆</label>
               <input type="radio" name="rating"><label (click)="RateSong(s.id, 3,false)">☆</label>
@@ -38,6 +40,7 @@
               <input type="radio" name="rating"><label (click)="RateSong(s.id, 1,false)">☆</label>
             </div>
           </div>
+          <!--Dodavanje u favorites--> 
           <div class="main-div" (click)="AddToFavorites(s.id)">
             <div class="button-div">
               <button class="fav-button">
@@ -50,6 +53,12 @@
       </ul>
     </div>
     <pagination-controls *ngIf="showSongM==false" class="pagination" (pageChange)="page = $event"></pagination-controls>
+
+    <!--Modal za favorites. Odlucio sam se da je ipak ovaj nacin malo jednostavniji i brzi za prikaz 
+      svig pjesama koje se nalaze logiranom korisniku u favorite listi, modal je isti kao i prikaz svih
+      pjesama osim sto koristi drugu varijablu za izlistavanje i unutar prikaza pjesama nema mogucnost 
+      ponovnog dodavanja u favorites nego brisanja iz favorites. 
+    --> 
     <div class="modal1" id="myModal" [style.display]="showModal1 ? 'block' : 'none'">
       <ul class="player__playlist list">
         <h2> FAVORITE SONGS</h2>
@@ -78,6 +87,7 @@
         </li>
       </ul>
     </div>
+    <!--S obzirom da je u zadatku navedeno da je song page potrebno raditi sa modalom, ovde se nalazi njegova deklaracija.--> 
     <app-song-page *ngIf="showSongM==true" [song]="clicked"></app-song-page>
   </div>
 

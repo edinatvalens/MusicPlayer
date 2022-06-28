@@ -7,14 +7,14 @@ import {HttpClient } from "@angular/common/http";
   styleUrls: ['./add-song-page.component.css']
 })
 export class AddSongPageComponent implements OnInit {
-
+  /*Varijable za unos vrijednosti i slanje u backend za dodavanje nove pjesme*/
   sName: any;
   sArtist: any;
   sUrl: any;
   sLenght: any;
   sCategory: any;
 
-
+  /*Varijabla za smjestanje kategorija*/
   Categories:any;
 
   constructor(private httpKlijent: HttpClient) { }
@@ -23,6 +23,7 @@ export class AddSongPageComponent implements OnInit {
     this.LoadCategorys();
   }
   
+  /*Ucitavanje kategorija*/
   LoadCategorys(){
     
     this.httpKlijent.get("https://localhost:44308/SongCategory/GetAll")
@@ -32,7 +33,7 @@ export class AddSongPageComponent implements OnInit {
     });
 
   }
-
+  /*Funkcija koja dodaje novu pjesmu i prikazuje poruku u zavisnosti od uspjesnosti*/
   btnAddSong() {
     let saljemo = {
       SongName: this.sName,
@@ -43,13 +44,10 @@ export class AddSongPageComponent implements OnInit {
       SongCategoryID: Number(this.sCategory),
       SongLenght:this.sLenght
     };
-    console.log(saljemo);
     this.httpKlijent.post("https://localhost:44308/Song/Add", saljemo)
       .subscribe((x: any) => {
         if (x != null) {
-       
-          alert("Song added succesfuly!");
-          
+          alert("Song added succesfuly!");      
         }
         else {
           alert("Failed, please try again!");

@@ -2,7 +2,7 @@
     <div class="container">
       <div class="title">Add song</div>
       <div class="content">
-        <form action="#">
+        <form>
           <div class="user-details">
             <div class="input-box">
               <span class="details">Song name</span>
@@ -19,24 +19,18 @@
             <div class="input-box">
               <span class="details">Song lenght</span>
               <input [(ngModel)]="sLenght" type="text" placeholder="Enter song lenght"  name="sLenght" required>
-            </div>
-            
-           
+            </div>   
           </div>
           <div class="input-box">
-            <select  [(ngModel)]="sCategory" #cat="ngModel" class="select-box-s" name="sCat" required>
+            <select  [(ngModel)]="sCategory" class="select-box-s" name="sCat" required>
                 <option value="undefined" disabled selected>
                   Select song category
                 </option>
                 <option  *ngFor="let obj of Categories" name="txtBrend"
                     [value]="obj.id"
                         ngDefaultControl>{{obj?.name}}
-                  <div *ngIf="cat.touched && cat.invalid" class="alert-danger">
-                    Obavezno polje
-                  </div>
                 </option>
-              </select>
-            
+              </select>         
           </div>
           <div class="button"  (click)="btnAddSong()">
             <input type="submit" value="Add song">

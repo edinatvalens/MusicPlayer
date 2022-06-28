@@ -10,13 +10,11 @@ import { SongPageComponent } from '../song-page/song-page.component';
   styleUrls: ['./edit-song.component.css']
 })
 export class EditSongComponent implements OnInit {
-  sName: any;
-  sArtist: any;
-  sUrl: any;
-  sLenght: any;
-  sCategory: any;
+  /*Varijabla za smjestanje pjesme koju je korisnik odlucio uredjivati*/
   song:any;
+  /*Varijabla za provjeru id pjesme koju je korisnik odlucio uredjivati*/
   songID:any= Number(this.route.snapshot.paramMap.get('id'));
+  /*Varijabla za smjestanje kategorija*/
   Categories:any;
   
   constructor(private httpKlijent: HttpClient,private route: ActivatedRoute,private  router :Router) { }
@@ -25,8 +23,8 @@ export class EditSongComponent implements OnInit {
     this.LoadSong();
     this.LoadCategorys();
   }
-
-  btnAddSong() {
+ /*Funkcija za slanje novih podataka u bekend, obavjestenje o uspjesnosti*/
+  btnEditSong() {
 
     let saljemo={
       songName: this.song.songName,
@@ -43,14 +41,14 @@ export class EditSongComponent implements OnInit {
     .subscribe((x: any) => {
       if (x != null) {
         alert("Song edited succesfuly!!");
-        this.router.navigate(['']);
+        this.router.navigate(['']); /*U slucaju da je edit uspjesan, korisnik se salje na homepage*/
       }
       else {
         alert("Edit failed, please try again!");
       }
     });
   }
-
+  /*Ucitavanje kategorija*/
   LoadCategorys(){
     this.httpKlijent.get("https://localhost:44308/SongCategory/GetAll")
     .subscribe(x=>{
@@ -58,6 +56,7 @@ export class EditSongComponent implements OnInit {
       this.Categories = x;
     });
   }
+  /*Ucitavanje specificke pjesme*/
   LoadSong(){
     
     this.httpKlijent.get("https://localhost:44308/Song/Get/"+this.songID)

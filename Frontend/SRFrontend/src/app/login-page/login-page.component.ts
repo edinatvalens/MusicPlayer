@@ -15,7 +15,9 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  btnLogin() {
+  btnLogin()/*Logiranje korisnika, smjestanje login informacija unutar autentifikacija helper i u slucaju uspjesnog slanje korisnika
+  na home page. windows location reload je tu zbog osvjezavanja stranice radi mjenjanja vrijednosti buttona login/logout*/
+   {
     let saljemo = {
       username: this.txtUsername,
       password: this.txtPassword
