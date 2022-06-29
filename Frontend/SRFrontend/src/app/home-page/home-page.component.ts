@@ -173,7 +173,7 @@ export class HomePageComponent implements OnInit {
     this.httpKlijent.post("https://localhost:44308/VoteRating/Add", saljemo)
     .subscribe((x: any) => {
       
-      if (x != null) {
+      if (x == true) {
         alert("Song rated successfuly!");
         this.LoadSongs();
         if(isFav==true){
@@ -181,7 +181,7 @@ export class HomePageComponent implements OnInit {
         }
       }
       else {
-        alert("Error, you need to be logged in to add in favorites!");
+        alert("Error, you cant vote twice!");
       }
     });
   }

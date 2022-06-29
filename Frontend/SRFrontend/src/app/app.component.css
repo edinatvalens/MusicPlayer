@@ -14,8 +14,7 @@
 
   nav{
     background: linear-gradient(#B993D6, #8CA6DB);
-   
-     height: 80px;
+    height: 80px;
     width: 100%;
     margin:0;
   }
@@ -45,7 +44,6 @@
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
-    background:#311b9227;
   }
 
   a.active,a:hover{
